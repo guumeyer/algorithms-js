@@ -1,5 +1,5 @@
+// time: avg O(log n), space: O(1)
 function binarySearch(arr, target){
-
   let startIdx = 0;
   let endIdx = arr.length - 1;
   let middleIdx = Math.floor((startIdx + endIdx)/2) ;
@@ -14,11 +14,9 @@ function binarySearch(arr, target){
     middleIdx = Math.floor((startIdx + endIdx)/2);
   }
 
-
   if (arr[middleIdx] == target) {
     return middleIdx;
   }
 
   return -1;
-  // add whatever parameters you deem necessary - good luck!
 }

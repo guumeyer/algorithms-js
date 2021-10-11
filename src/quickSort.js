@@ -1,4 +1,5 @@
 
+// time: O(n log n), space: O(log n) - 
 function _quickSourt(array, startIdx, endIdx) {
     if(startIdx >= endIdx) {
         return;
@@ -36,8 +37,6 @@ function quickSort(array) {
     _quickSourt(array, 0, array.length - 1);
     return array;
 }
-
-
 
 module.exports = {
     quickSort

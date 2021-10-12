@@ -1,5 +1,5 @@
 
-// time: O(n^2); space: O(n);
+// time: O(n^2); space: O(1);
 // make less swap than bublesort algorithm
 function selectSort(array) {
     for (let i = 0; i < array.length; i++) {

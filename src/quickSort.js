@@ -1,5 +1,5 @@
 
-// time: O(n log n), space: O(log n) - 
+// time: avg O(n log n), worst: O(n^2), space: O(n) 
 function _quickSourt(array, startIdx, endIdx) {
     if(startIdx >= endIdx) {
         return;

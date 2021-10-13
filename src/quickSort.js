@@ -1,14 +1,21 @@
-// time: avg O(n log n), worst: O(n^2)
-// space: O(1), but the call stack will be O(log n) because of the recursion
+// time: avg: O(n log n), worst: O(n^2) - on picking smallest element as pivot will require O(n) decompositions x O(n) comparasions per decomposion
+// space: O(log n) due the recursion into call stack 
 function quickSort(array) {
-    _quickSort(array, 0, (array.length - 1));
+    return _quickSort(array, 0, (array.length - 1));;
+}
+
+function _quickSort(array, startIdx, endIdx) {
+    if (startIdx >= endIdx) return array;
+
+    const partitionIdx = partition(array, startIdx, endIdx);
+
+    _quickSort(array, (partitionIdx + 1), endIdx);
+    _quickSort(array, startIdx, (partitionIdx - 1));
 
     return array;
 }
 
-function _quickSort(array, startIdx, endIdx) {
-    if (startIdx >= endIdx) return;
-
+function partition(array, startIdx, endIdx) {
     const pivotIdx = startIdx;
     let leftIdx = startIdx + 1;
     let rightIdx = endIdx;
@@ -24,8 +31,7 @@ function _quickSort(array, startIdx, endIdx) {
 
     swap(pivotIdx, rightIdx, array);
 
-    _quickSort(array, (rightIdx + 1), endIdx);
-    _quickSort(array, startIdx, (rightIdx - 1));
+    return rightIdx;
 }
 
 function swap(i, j, array) {

@@ -1,5 +1,6 @@
 // time: O(nk) , n = number of elements into the array, k = the size of the larggest number from n
 // space: O(n+k)
+// Could not be good when k is larger
 function radixSort(numbers) {
     // get the largest number
     const maxDigitCout = mostDigits(numbers);

@@ -1,4 +1,4 @@
-const { getDigit, getNumberOfDigets } = require('../src/radixSort');
+const { getDigit, digitCouts } = require('../src/radixSort');
 
 
 test('should get 1st number of 12345 and return 5', function () {
@@ -13,14 +13,20 @@ test('should get 1st number from negative -12345 and return 5', function () {
     expect(result).toBe(5);
 })
 
-test('should return number 4 digets from number 1235 ', function() {
-    const result = getNumberOfDigets(1235);
+test('should count number 4 digets from number 1235 ', function() {
+    const result = digitCouts(1235);
 
     expect(result).toBe(4);
 })
 
-test('should return number 3 digets from negative number 123 ', function() {
-    const result = getNumberOfDigets(-123);
+test('should count 3 digets from negative number 123 ', function() {
+    const result = digitCouts(-123);
 
     expect(result).toBe(3);
+})
+
+test('should count 1 digets from negative number 1 ', function() {
+    const result = digitCouts(0);
+
+    expect(result).toBe(1);
 })

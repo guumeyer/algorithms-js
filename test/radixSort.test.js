@@ -1,4 +1,4 @@
-const { getDigit, digitCouts } = require('../src/radixSort');
+const { getDigit, digitCouts, mostDigits } = require('../src/radixSort');
 
 
 test('should get 1st number of 12345 and return 5', function () {
@@ -29,4 +29,10 @@ test('should count 1 digets from negative number 1 ', function() {
     const result = digitCouts(0);
 
     expect(result).toBe(1);
+})
+
+test('should return the larggest digets from [12, 123, 1234] that is 4', function() {
+    const result = mostDigits([12, 123, 1234]);
+
+    expect(result).toBe(4);
 })

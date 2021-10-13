@@ -7,8 +7,16 @@ function digitCouts(number) {
     return Math.floor(Math.log10(Math.abs(number))) + 1;
 }
 
+function mostDigits(numbers) {
+    let maxDigits  = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        maxDigits = Math.max(maxDigits, digitCouts(numbers[i]));
+    }
+    return maxDigits;
+}
 
 module.exports = {
     getDigit,
-    digitCouts
+    digitCouts,
+    mostDigits
 }

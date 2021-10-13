@@ -17,7 +17,9 @@
 - merge sort
 - quick sort
 
-## Can we do better? Yes but not by making comparisons
+## Integer sort
+- Can we do better? Yes but not by making comparisons between the numbers
+- Radix sort 
 
 ## Run Test
 ``` shell

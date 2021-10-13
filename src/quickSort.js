@@ -1,7 +1,7 @@
 // time: avg:g O(n log n), worst: O(n^2) - on picking smallest element as pivot will require O(n) decompositions x O(n) comparasions per decomposion
 // space: O(log n) due the recursion into call stack 
 function quickSort(array) {
-    return _quickSort(array, 0, (array.length - 1));;
+    return _quickSort(array, 0, (array.length - 1));
 }
 
 function _quickSort(array, startIdx, endIdx) {

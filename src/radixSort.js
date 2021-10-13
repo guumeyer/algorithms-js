@@ -1,3 +1,22 @@
+// time: O(nk) , n = number of elements into the array, k = the size of the larggest number from n
+// space: O(n+k)
+function radixSort(numbers) {
+    // get the largest number
+    const maxDigitCout = mostDigits(numbers);
+
+    for (let k = 0; k < maxDigitCout; k++) {
+        const digitBuckets = Array.from({length: 10}, () => []);
+        for (let i = 0; i < numbers.length; i++) {
+            const digitKey = getDigit(numbers[i], k);
+            digitBuckets[digitKey].push(numbers[i]);
+        }
+        // Flat the diget buckets
+        numbers = [].concat(...digitBuckets)
+    }
+
+    return numbers;
+}
+
 function getDigit(number, position) {
     return Math.floor(Math.abs(number) / Math.pow(10, position)) %10;
 }
@@ -18,5 +37,6 @@ function mostDigits(numbers) {
 module.exports = {
     getDigit,
     digitCouts,
-    mostDigits
+    mostDigits,
+    radixSort
 }

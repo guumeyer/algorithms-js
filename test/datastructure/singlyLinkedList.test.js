@@ -1,4 +1,4 @@
-const SinglyLinkedList = require('../../src/datastructure/SinglyLinkedList');
+const SinglyLinkedList = require('../../src/datastructure/singlyLinkedList');
 
 test('Should push an item into list and tail and head should be the same item', function() {
 

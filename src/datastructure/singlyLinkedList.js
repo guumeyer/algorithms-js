@@ -49,7 +49,7 @@ class SinglyLinkedList {
     }
 
     // time: O(1)
-    remove() {
+    shift() {
         if (!this.head) return null;
         const currentHead =  this.head;
         this.head = this.head.next;

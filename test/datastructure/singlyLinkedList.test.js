@@ -74,7 +74,7 @@ test('Should pop all items from list and return empty linked list', function() {
     expect(empty).toBeNull();
 });
 
-test("Should remove header", function() {
+test("Should shift header", function() {
     const list = new SinglyLinkedList();
     list.push('test a');
     list.push('test b');
@@ -82,7 +82,7 @@ test("Should remove header", function() {
 
     expect(list.length).toBe(3);
 
-    const removedNode = list.remove();
+    const removedNode = list.shift();
 
     expect(list.length).toBe(2);
     expect(list.head.value).toBe('test b');
@@ -90,7 +90,7 @@ test("Should remove header", function() {
     expect(removedNode.value).toBe('test a');
 });
 
-test("Should not remove header from empty list", function() {
+test("Should not shift header from empty list", function() {
     const list = new SinglyLinkedList();
     list.push('test a');
     list.push('test b');
@@ -98,10 +98,10 @@ test("Should not remove header from empty list", function() {
 
     expect(list.length).toBe(3);
 
-    list.remove();
-    list.remove();
-    list.remove();
-    const removedNode = list.remove();
+    list.shift();
+    list.shift();
+    list.shift();
+    const removedNode = list.shift();
 
     expect(list.length).toBe(0);
     expect(list.head).toBeNull();

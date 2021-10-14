@@ -22,7 +22,6 @@ test('Should push two items into list', function() {
 });
 
 test('Should push three items into list', function() {
-
     const list = new SinglyLinkedList();
     list.push('test a');
     list.push('test b');
@@ -73,4 +72,37 @@ test('Should pop all items from list and return empty linked list', function() {
     expect(removeB.value).toBe('test b');
     expect(removeA.value).toBe('test a');
     expect(empty).toBeNull();
+});
+
+test("Should remove header", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const removedNode = list.remove();
+
+    expect(list.length).toBe(2);
+    expect(list.head.value).toBe('test b');
+    expect(list.tail.value).toBe('test c');
+    expect(removedNode.value).toBe('test a');
+});
+
+test("Should not remove header from empty list", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    list.remove();
+    list.remove();
+    list.remove();
+    const removedNode = list.remove();
+
+    expect(list.length).toBe(0);
+    expect(removedNode).toBeNull();
 });

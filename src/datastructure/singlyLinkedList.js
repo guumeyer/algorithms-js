@@ -25,14 +25,7 @@ class SinglyLinkedList {
         this.length++;
     }
 
-    traverse() {
-        let current = this.head;
-        while(current) {
-            console.log(current.value);
-            current = current.next;
-        }
-    }
-
+    // time: O(n)
     pop() {
         if (this.head == null) return null;
 
@@ -55,6 +48,14 @@ class SinglyLinkedList {
         return current;
     }
 
+    // time: O(1)
+    remove() {
+        if (!this.head) return null;
+        const currentHead =  this.head;
+        this.head = this.head.next;
+        this.length --;
+        return currentHead;
+    }
 
 }
 

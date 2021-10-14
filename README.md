@@ -5,7 +5,7 @@
 npm test
 ```
 
-# Seach
+## Seach
 - naive approach O(n)
 - binary search O(log n)
 
@@ -27,3 +27,4 @@ npm test
 - Radix sort 
 Can we do better? Yes but not by making comparisons between the numbers
 
+## Data structure

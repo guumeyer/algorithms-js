@@ -1,4 +1,4 @@
-const { naiveSearchString } = require('../src/naiveSearchString');
+const { naiveSearchString } = require('../../src/search/naiveSearchString');
 
 test('should found 2 occurence of lon into lonborlon', function() {
     const result = naiveSearchString('lonborlon', 'lon');

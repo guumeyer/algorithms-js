@@ -1,4 +1,4 @@
-const { insertSort } = require('../src/insertSort');
+const { insertSort } = require('../../src/sort/insertSort');
 
 test('should sort [3,2,1] to [1,2,3]', function () {
 

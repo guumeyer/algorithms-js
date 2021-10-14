@@ -1,4 +1,4 @@
-const { getDigit, digitCouts, mostDigits, radixSort } = require('../src/radixSort');
+const { getDigit, digitCouts, mostDigits, radixSort } = require('../../src/sort/radixSort');
 
 
 test('should get 1st number of 12345 and return 5', function () {

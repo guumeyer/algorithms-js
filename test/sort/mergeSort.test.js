@@ -1,4 +1,4 @@
-const { merge, mergeSort } = require('../src/mergeSort');
+const { merge, mergeSort } = require('../../src/sort/mergeSort');
 
 test('Should merge [3,6,9] and [1,2,7]', function() {
     const result = merge([3,6,9], [1,2,7]);

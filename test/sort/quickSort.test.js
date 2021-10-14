@@ -1,4 +1,4 @@
-const { quickSort } = require('../src/quickSort');
+const { quickSort } = require('../../src/sort/quickSort');
 
 test("Should sort ['b','c','a','d'] to abcd", function() {
     const result = quickSort(['b','c','a','d']).join('');

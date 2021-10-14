@@ -1,7 +1,6 @@
 const SinglyLinkedList = require('../../src/datastructure/singlyLinkedList');
 
 test('Should push an item into list and tail and head should be the same item', function() {
-
     const list = new SinglyLinkedList();
     list.push('test');
 
@@ -11,7 +10,6 @@ test('Should push an item into list and tail and head should be the same item', 
 });
 
 test('Should push two items into list', function() {
-
     const list = new SinglyLinkedList();
     list.push('test a');
     list.push('test b');
@@ -130,4 +128,47 @@ test('Should unshift a new item at header', function(){
     expect(list.length).toBe(2);
     expect(list.head.value).toBe('test b');
     expect(list.tail.value).toBe('test a');
+});
+
+test("Should get index 1 list", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const node = list.get(1);
+    const nodea = list.get(0);
+    const nodec = list.get(2);
+
+    expect(node.value).toBe('test b');
+    expect(nodea.value).toBe('test a');
+    expect(nodec.value).toBe('test c');
+});
+
+test("Should return null by get value with negative index", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const node = list.get(-1);
+
+    expect(node).toBeNull();
+});
+
+test("Should return null by get value with overflow index", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const node = list.get(6);
+
+    expect(node).toBeNull();
 });

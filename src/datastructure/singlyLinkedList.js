@@ -61,12 +61,26 @@ class SinglyLinkedList {
         return currentHead;
     }
 
+    // time: O(1)
     unshift(val) {
         const node = new Node(val);
         node.next = this.head;
         this.head = node;
         this.tail = this.tail || node;
         this.length ++;
+    }
+
+    // time: O(n)
+    get(index) {
+        if (index < 0 || index >= this.length) return null;
+        let current = this.head;
+        
+
+        for (let i = 0; i < index; i ++) {
+            current = current.next;
+        }
+
+        return current;
     }
 
 }

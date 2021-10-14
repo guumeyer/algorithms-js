@@ -104,5 +104,7 @@ test("Should not remove header from empty list", function() {
     const removedNode = list.remove();
 
     expect(list.length).toBe(0);
+    expect(list.head).toBeNull();
+    expect(list.tail).toBeNull();
     expect(removedNode).toBeNull();
 });

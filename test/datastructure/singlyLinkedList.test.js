@@ -108,3 +108,26 @@ test("Should not shift header from empty list", function() {
     expect(list.tail).toBeNull();
     expect(removedNode).toBeNull();
 });
+
+test('Should unshift a new item in empty list', function(){
+    const list = new SinglyLinkedList();
+    list.unshift('test a');
+
+    expect(list.length).toBe(1);
+    expect(list.head.value).toBe('test a');
+    expect(list.tail.value).toBe('test a');
+});
+
+test('Should unshift a new item at header', function(){
+    const list = new SinglyLinkedList();
+    list.unshift('test a');
+
+    expect(list.length).toBe(1);
+    expect(list.head.value).toBe('test a');
+    expect(list.tail.value).toBe('test a');
+
+    list.unshift('test b');
+    expect(list.length).toBe(2);
+    expect(list.head.value).toBe('test b');
+    expect(list.tail.value).toBe('test a');
+});

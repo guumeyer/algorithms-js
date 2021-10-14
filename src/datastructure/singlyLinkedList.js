@@ -15,6 +15,10 @@ class SinglyLinkedList {
     push(value) {
         const node = new Node(value);
         node.next = this.tail;
+        this.head = this.head || node;
         this.tail = node;
+        this.length++;
     }
 }
+
+module.exports = SinglyLinkedList;

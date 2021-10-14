@@ -23,7 +23,7 @@ npm test
 - merge sort
 - quick sort
 
-### Integer sort O(nk) n = arrays elements and k= larggest number size
+### Integer sort O(nk) n = arrays elements and k= the largest number size from input array
 - Radix sort 
 Can we do better? Yes but not by making comparisons between the numbers
 

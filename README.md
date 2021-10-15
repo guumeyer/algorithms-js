@@ -28,3 +28,11 @@ npm test
 Can we do better? Yes but not by making comparisons between the numbers
 
 ## Data structure
+### Singly Linked List
+- push - O(1)
+- pop - O(n)
+- shift - O(1)
+- unshift - O(1)
+- get - O(n)
+- set - O(n)
+- insert - O(n)

@@ -172,3 +172,102 @@ test("Should return null by get value with overflow index", function() {
 
     expect(node).toBeNull();
 });
+
+test("Should set value by index", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.set(1, 'test f');
+
+    expect(result).toBeTruthy();
+});
+
+test("Shouldnot set value by invalid index", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.set(-1, 'test f');
+
+    expect(result).toBeFalsy();
+});
+
+test("Should insert new element on index 1", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.insert(1, 'test f');
+    const node = list.get(1);
+
+    expect(result).toBeTruthy();
+    expect(list.length).toBe(4);
+});
+
+test("Should insert new element as head", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.insert(0, 'test r');
+
+    expect(result).toBeTruthy();
+    expect(list.length).toBe(4);
+    expect(list.head.value).toBe('test r');
+});
+
+test("Should insert new element as tail", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.insert(3, 'test t');
+
+    expect(result).toBeTruthy();
+    expect(list.length).toBe(4);
+    expect(list.tail.value).toBe('test t');
+});
+
+test("Shouldnot insert when index is negative", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.insert(-1, 'test t');
+
+    expect(result).toBeFalsy();
+    expect(list.length).toBe(3);
+});
+
+test("Shouldnot insert when index is overflow", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.insert(100, 'test t');
+
+    expect(result).toBeFalsy();
+    expect(list.length).toBe(3);
+});

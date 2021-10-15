@@ -23,6 +23,7 @@ class SinglyLinkedList {
             this.tail = node;
         }
         this.length++;
+        return true;
     }
 
     // time: O(n)
@@ -68,6 +69,7 @@ class SinglyLinkedList {
         this.head = node;
         this.tail = this.tail || node;
         this.length ++;
+        return true;
     }
 
     // time: O(n)
@@ -83,6 +85,26 @@ class SinglyLinkedList {
         return current;
     }
 
+    // O(n)
+    set(index, value) {
+        const current = this.get(index);
+        if (!current) return false;
+        current.value = value;
+        return true;
+    }
+
+    // Add on tail or header is O(1), middle O(n)
+    insert(index, value) {
+        if (index < 0 || index > this.length) return false;
+        if (index === this.length) return this.push(value);
+        if (index === 0) return this.unshift(value);
+        const newNode = new Node(value);
+        const previews = this.get(index-1);
+        newNode.next = previews.next;
+        previews.next = newNode;
+        this.length++;
+        return true;
+    }
 }
 
 module.exports = SinglyLinkedList;

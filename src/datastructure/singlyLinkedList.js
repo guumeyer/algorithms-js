@@ -93,7 +93,7 @@ class SinglyLinkedList {
         return true;
     }
 
-    // Add on tail or header is O(1), middle O(n)
+    // Tail and header: O(1), Middle: O(n)
     insert(index, value) {
         if (index < 0 || index > this.length) return false;
         if (index === this.length) return !!this.push(value);

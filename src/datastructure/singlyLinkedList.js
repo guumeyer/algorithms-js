@@ -141,6 +141,16 @@ class SinglyLinkedList {
 
         return this;
     }
+
+    toArray() {
+        const array = [];
+        let current = this.head;
+        while(current) {
+            array.push(current.value);
+            current = current.next;
+        }
+        return array;
+    }
 }
 
 module.exports = SinglyLinkedList;

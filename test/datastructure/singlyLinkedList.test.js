@@ -345,19 +345,16 @@ test("Should reverse list", function() {
     list.push('test a');
     list.push('test b');
     list.push('test c');
-
-    expect(list.length).toBe(3);
+    list.push('test d');
+    list.push('test f');
 
     const result = list.reverse();
-    const node1 = list.head;
-    const node2 = list.get(1);
-    const node3 = list.tail;
+    const revertedList = list.toArray();
 
     expect(result).toBeTruthy();
-    expect(list.length).toBe(3);
+    expect(list.length).toBe(5);
 
-    expect(node1.value).toBe('test c');
-    expect(node2.value).toBe('test b');
-    expect(node3.value).toBe('test a');
-   
+    expect(list.head.value).toBe('test f');
+    expect(revertedList).toEqual([ 'test f', 'test d', 'test c', 'test b', 'test a' ]);
+    expect(list.tail.value).toBe('test a');
 });

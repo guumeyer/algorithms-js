@@ -45,8 +45,6 @@ test('Should pop last item from list', function() {
     expect(list.head.value).toBe('test a');
     expect(list.tail.value).toBe('test b');
     expect(removedNode.value).toBe('test c');
-
-
 });
 
 test('Should pop all items from list and return empty linked list', function() {
@@ -270,4 +268,96 @@ test("Shouldnot insert when index is overflow", function() {
 
     expect(result).toBeFalsy();
     expect(list.length).toBe(3);
+});
+
+test("Should remove item from idex 1", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.delete(1);
+
+    expect(result).toBeTruthy();
+    expect(list.length).toBe(2);
+});
+
+test("Should remove item from header", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.delete(0);
+
+    expect(result).toBeTruthy();
+    expect(list.length).toBe(2);
+});
+
+test("Should remove item from tail", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.delete(2);
+
+    expect(result).toBeTruthy();
+    expect(list.length).toBe(2);
+});
+
+test("Shouldnot remove item when idex is negative", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.delete(-1);
+
+    expect(result).toBeFalsy();
+    expect(list.length).toBe(3);
+});
+
+test("Shouldnot remove item when idex is overflow", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.delete(100);
+
+    expect(result).toBeFalsy();
+    expect(list.length).toBe(3);
+});
+
+test("Should reverse list", function() {
+    const list = new SinglyLinkedList();
+    list.push('test a');
+    list.push('test b');
+    list.push('test c');
+
+    expect(list.length).toBe(3);
+
+    const result = list.reverse();
+    const node1 = list.head;
+    const node2 = list.get(1);
+    const node3 = list.tail;
+
+    expect(result).toBeTruthy();
+    expect(list.length).toBe(3);
+
+    expect(node1.value).toBe('test c');
+    expect(node2.value).toBe('test b');
+    expect(node3.value).toBe('test a');
+   
 });

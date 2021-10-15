@@ -98,12 +98,48 @@ class SinglyLinkedList {
         if (index < 0 || index > this.length) return false;
         if (index === this.length) return !!this.push(value);
         if (index === 0) return !!this.unshift(value);
+
         const newNode = new Node(value);
         const previews = this.get(index-1);
         newNode.next = previews.next;
         previews.next = newNode;
+
         this.length++;
+    
         return true;
+    }
+    // tail and header: O(1), middle: O(n)
+    delete(index) {
+        if (index < 0 || index > this.length) return null;
+        if (index === (this.length -1) ) return !!this.pop();
+        if (index === 0) return !!this.shift();
+    
+        const prevNode = this.get((index - 1));
+        const remodeNode = prevNode.next;
+        prevNode.next = remodeNode.next;
+
+        this.length--;
+
+        return true;
+    }
+
+    // O(n)
+    reverse() {
+        if (!this.head) return;
+        const newTail = new Node(this.head.value);
+        let prev = newTail;
+        let current = this.head.next;
+        while(current) {
+            const temp = current;
+            current = current.next;
+            temp.next = prev;
+            prev = temp;
+        }
+
+        this.head = prev;
+        this.tail = newTail;
+
+        return this;
     }
 }
 

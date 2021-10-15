@@ -35,4 +35,7 @@ Can we do better? Yes but not by making comparisons between the numbers
 - unshift - O(1)
 - get - O(n)
 - set - O(n)
-- insert - O(n)
+- insert - O(n), header or tail: O(1);
+- delete - O(n), header or tail: O(1);
+- reverse - O(n)
+- toArray - O(n)
